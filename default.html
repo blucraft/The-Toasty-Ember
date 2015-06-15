@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+	<head>
+		<title>The Toasty Ember</title>
+
+		<meta charset='UTF-8' />
+		<meta name='author' content='Matthew Regehr' />
+		<meta name='description' content='' />
+		
+		<link rel='stylesheet' href='/_css/app.css' />
+		<link rel='icon' href='/_images/icon.png' />
+	</head>
+	<body>
+		<header>
+			<h1 style='background-image: url(/_images/icon.png);'>The Toasty Ember</h1>
+
+			<div class='buttons'>
+				<button onclick='toggle()' id='pause'>Pause</button>
+			</div>
+		</header>
+		<main>
+			<canvas id='canvas'></canvas>
+			
+			<noscript>
+				<aside class='green noJS'>
+					<h1>Where's the JS?</h1>
+
+					<p>
+						Please turn on <bdi>JavaScript</bdi> in your browser. It is necessary for like, everything. If you don't know how, <a href="http://www.enable-javascript.com/" target="_blank">try this place</a>.
+					</p>
+				</aside>
+			</noscript>
+		</main>
+
+		<script src='http://localhost:8080/_js/jquery.js'></script>
+		<script src='http://localhost:8080/_js/blu.js'></script>
+
+		<script src='/_js/src/fire.js'></script>
+
+		<script>
+			var toggle = function () {
+				if (main.on) {
+					$('#pause').html('Start');
+
+					main.stop();
+				}
+
+				else {
+					$('#pause').html('Pause');
+
+					main.start();
+				}
+			};
+		</script>
+	</body>
+</html>
